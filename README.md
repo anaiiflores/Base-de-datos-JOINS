@@ -8,10 +8,6 @@ explicit inner join
 implicit inner join
 
 
-left outer join
-right outer join
-
-
 
 EXPLICIT INNER JOIN VERSION:
 —- 
