@@ -17,6 +17,13 @@ ON T.COUNTRY = C.ID
 ORDER BY C.NAME ASC, T.NAME;
 ~~~
 
+| name | name |
+| :--- | :--- |
+| Palma de Mallorca | Spain |
+| Liverpool | United Kingdom |
+| London | United Kingdom |
+| Manchester | United Kingdom |
+
 ###### IMPLICIT INNER JOIN VERSION:
 
 ~~~
@@ -25,6 +32,13 @@ FROM TOWNS T, COUNTRIES C
 WHERE T.COUNTRY = C.ID
 ORDER BY C.NAME ASC, T.NAME;
 ~~~
+
+| name | name |
+| :--- | :--- |
+| Palma de Mallorca | Spain |
+| Liverpool | United Kingdom |
+| London | United Kingdom |
+| Manchester | United Kingdom |
 
 ###### LEFT OUTER JOIN VERSION:
 
@@ -36,6 +50,14 @@ ON T.COUNTRY = C.ID
 ORDER BY C.NAME ASC, T.NAME;
 ~~~
 
+| name | name |
+| :--- | :--- |
+| Palma de Mallorca | Spain |
+| Liverpool | United Kingdom |
+| London | United Kingdom |
+| Manchester | United Kingdom |
+| Athens | null |
+
 ###### RIGHT OUTER JOIN VERSION:
 
 ~~~
@@ -45,6 +67,14 @@ RIGHT OUTER JOIN COUNTRIES C
 ON T.COUNTRY = C.ID
 ORDER BY C.NAME ASC, T.NAME;
 ~~~
+
+| name | name |
+| :--- | :--- |
+| null | Italy |
+| Palma de Mallorca | Spain |
+| Liverpool | United Kingdom |
+| London | United Kingdom |
+| Manchester | United Kingdom |
 
 ## 2. Show the name of the teams with the town name and country name. Sort the results sorted by name of town and name of team. Make five versions:
 Using an explicit inner join,
@@ -65,6 +95,16 @@ INNER JOIN  COUNTRIES C
 ORDER BY O.NAME, T.NAME;
 ~~~
 
+| name | name | name |
+| :--- | :--- | :--- |
+| Liverpool | Liverpool | United Kingdom |
+| Arsenal | London | United Kingdom |
+| Chelsea | London | United Kingdom |
+| Tottenham Hotspur | London | United Kingdom |
+| Manchester City | Manchester | United Kingdom |
+| Manchester United | Manchester | United Kingdom |
+| R. C. D. Mallorca | Palma de Mallorca | Spain |
+
 ###### IMPLICIT INNER JOIN VERSION:
 
 ~~~
@@ -73,6 +113,16 @@ FROM TEAMS T , TOWNS O , COUNTRIES C
 WHERE O.COUNTRY = C.ID AND T.TOWN = O.ID
 ORDER BY O.NAME, T.NAME;
 ~~~
+
+| name | name | name |
+| :--- | :--- | :--- |
+| Liverpool | Liverpool | United Kingdom |
+| Arsenal | London | United Kingdom |
+| Chelsea | London | United Kingdom |
+| Tottenham Hotspur | London | United Kingdom |
+| Manchester City | Manchester | United Kingdom |
+| Manchester United | Manchester | United Kingdom |
+| R. C. D. Mallorca | Palma de Mallorca | Spain |
 
 ###### LEFT OUTER JOIN VERSION:
 
@@ -86,6 +136,17 @@ LEFT OUTER JOIN  COUNTRIES C
 ORDER BY O.NAME, T.NAME;
 ~~~
 
+| name | name | name |
+| :--- | :--- | :--- |
+| Liverpool | Liverpool | United Kingdom |
+| Arsenal | London | United Kingdom |
+| Chelsea | London | United Kingdom |
+| Tottenham Hotspur | London | United Kingdom |
+| Manchester City | Manchester | United Kingdom |
+| Manchester United | Manchester | United Kingdom |
+| R. C. D. Mallorca | Palma de Mallorca | Spain |
+| C. D. Amigos | null | null |
+
 ###### RIGHT OUTER JOIN VERSION:
 
 ~~~
@@ -98,6 +159,17 @@ RIGHT OUTER JOIN  COUNTRIES C
 ORDER BY O.NAME, T.NAME;
 ~~~
 
+| name | name | name |
+| :--- | :--- | :--- |
+| Liverpool | Liverpool | United Kingdom |
+| Arsenal | London | United Kingdom |
+| Chelsea | London | United Kingdom |
+| Tottenham Hotspur | London | United Kingdom |
+| Manchester City | Manchester | United Kingdom |
+| Manchester United | Manchester | United Kingdom |
+| R. C. D. Mallorca | Palma de Mallorca | Spain |
+| null | null | Italy |
+
 ###### FULL OUTER JOIN VERSION:
 
 ~~~
@@ -109,6 +181,19 @@ FULL OUTER JOIN  COUNTRIES C
    ON O.COUNTRY = C.ID
 ORDER BY O.NAME, T.NAME;
 ~~~
+
+| name | name | name |
+| :--- | :--- | :--- |
+| null | Athens | null |
+| Liverpool | Liverpool | United Kingdom |
+| Arsenal | London | United Kingdom |
+| Chelsea | London | United Kingdom |
+| Tottenham Hotspur | London | United Kingdom |
+| Manchester City | Manchester | United Kingdom |
+| Manchester United | Manchester | United Kingdom |
+| R. C. D. Mallorca | Palma de Mallorca | Spain |
+| C. D. Amigos | null | null |
+| null | null | Italy |
 
 ## 3. Select the name of the towns and the numbers of teams of the town. Sort the results by town name. Make two versions:
 Using an explicit inner join,
@@ -127,6 +212,13 @@ GROUP BY O.NAME
 ORDER BY O.NAME;
 ~~~
 
+| name | count |
+| :--- | :--- |
+| Liverpool | 1 |
+| London | 3 |
+| Manchester | 2 |
+| Palma de Mallorca | 1 |
+
 ###### LEFT OUTER JOIN VERSION:
  
 ~~~
@@ -137,6 +229,14 @@ RIGHT OUTER JOIN TOWNS O
 GROUP BY O.NAME
 ORDER BY O.NAME;
 ~~~
+
+| name | count |
+| :--- | :--- |
+| Athens | 0 |
+| Liverpool | 1 |
+| London | 3 |
+| Manchester | 2 |
+| Palma de Mallorca | 1 |
 
 ## 4. Show the name of the towns that don't have teams using a left outer join.
 
