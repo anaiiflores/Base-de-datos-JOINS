@@ -1,5 +1,5 @@
 # Base-de-datos-JOINS
-1. Show the name of the towns and its country name. Sort the results sorted by country name and town name. Make four versions:
+ ## 1. Show the name of the towns and its country name. Sort the results sorted by country name and town name. Make four versions:
 Using an explicit inner join,
 using an implicit inner join,
 using a left outer join,
@@ -7,10 +7,8 @@ and using a right outer join.
 explicit inner join
 implicit inner join
 
-
-
 ###### EXPLICIT INNER JOIN VERSION:
-—- 
+
 ~~~
 SELECT T.NAME, C.NAME
 FROM TOWNS T
@@ -19,11 +17,8 @@ ON T.COUNTRY = C.ID
 ORDER BY C.NAME ASC, T.NAME;
 ~~~
 
-
-
-
 ###### IMPLICIT INNER JOIN VERSION:
--- 
+
 ~~~
 SELECT T.NAME, C.NAME
 FROM TOWNS T, COUNTRIES C
@@ -31,11 +26,8 @@ WHERE T.COUNTRY = C.ID
 ORDER BY C.NAME ASC, T.NAME;
 ~~~
 
-
-
-
 ###### LEFT OUTER JOIN VERSION:
--
+
 ~~~
 SELECT T.NAME, C.NAME
 FROM TOWNS T
@@ -44,10 +36,7 @@ ON T.COUNTRY = C.ID
 ORDER BY C.NAME ASC, T.NAME;
 ~~~
 
-
-
 ###### RIGHT OUTER JOIN VERSION:
--- 
 
 ~~~
 SELECT T.NAME, C.NAME
@@ -57,23 +46,14 @@ ON T.COUNTRY = C.ID
 ORDER BY C.NAME ASC, T.NAME;
 ~~~
 
-
-
-
-
-
-2. Show the name of the teams with the town name and country name. Sort the results sorted by name of town and name of team. Make five versions:
+## 2. Show the name of the teams with the town name and country name. Sort the results sorted by name of town and name of team. Make five versions:
 Using an explicit inner join,
 using an implicit inner join,
 using a left outer join,
 using a right outer join,
 using a full outer join.
 
-
-
-
 ###### EXPLICIT INNER JOIN VERSION:
--- 
 
 ~~~
 SELECT T.NAME, O.NAME, C.NAME
@@ -85,13 +65,7 @@ INNER JOIN  COUNTRIES C
 ORDER BY O.NAME, T.NAME;
 ~~~
 
-
-
-
-
 ###### IMPLICIT INNER JOIN VERSION:
--- 
-
 
 ~~~
 SELECT T.NAME, O.NAME, C.NAME
@@ -100,11 +74,7 @@ WHERE O.COUNTRY = C.ID AND T.TOWN = O.ID
 ORDER BY O.NAME, T.NAME;
 ~~~
 
-
-
 ###### LEFT OUTER JOIN VERSION:
--- 
-
 
 ~~~
 SELECT T.NAME, O.NAME, C.NAME
@@ -116,12 +86,7 @@ LEFT OUTER JOIN  COUNTRIES C
 ORDER BY O.NAME, T.NAME;
 ~~~
 
-
-
-
-
 ###### RIGHT OUTER JOIN VERSION:
--- 
 
 ~~~
 SELECT T.NAME, O.NAME, C.NAME
@@ -133,10 +98,7 @@ RIGHT OUTER JOIN  COUNTRIES C
 ORDER BY O.NAME, T.NAME;
 ~~~
 
-
-
 ###### FULL OUTER JOIN VERSION:
-–
 
 ~~~
 SELECT T.NAME, O.NAME, C.NAME
@@ -148,18 +110,14 @@ FULL OUTER JOIN  COUNTRIES C
 ORDER BY O.NAME, T.NAME;
 ~~~
 
-
-
-3. Select the name of the towns and the numbers of teams of the town. Sort the results by town name. Make two versions:
+## 3. Select the name of the towns and the numbers of teams of the town. Sort the results by town name. Make two versions:
 Using an explicit inner join,
 using a left outer join.
 explicit inner join
 left outer join
 
-
-
 ###### EXPLICIT INNER JOIN VERSION:
---  
+  
 ~~~
 SELECT O.NAME, COUNT(T.NAME)
 FROM TEAMS T
@@ -169,10 +127,8 @@ GROUP BY O.NAME
 ORDER BY O.NAME;
 ~~~
 
-
-
 ###### LEFT OUTER JOIN VERSION:
--- 
+ 
 ~~~
 SELECT O.NAME, COUNT(T.NAME)
 FROM TEAMS T
@@ -182,11 +138,8 @@ GROUP BY O.NAME
 ORDER BY O.NAME;
 ~~~
 
+## 4. Show the name of the towns that don't have teams using a left outer join.
 
-
-4. Show the name of the towns that don't have teams using a left outer join.
-
--- 
 ###### LEFT OUTER JOIN :
 
 ~~~
@@ -196,6 +149,3 @@ LEFT OUTER JOIN TEAMS T
 ON  O.ID = T.TOWN
 WHERE T.TOWN IS NULL ;
 ~~~
-
-
-
