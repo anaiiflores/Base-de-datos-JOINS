@@ -9,7 +9,7 @@ implicit inner join
 
 
 
-EXPLICIT INNER JOIN VERSION:
+### EXPLICIT INNER JOIN VERSION:
 —- 
 ~~~
 SELECT T.NAME, C.NAME
