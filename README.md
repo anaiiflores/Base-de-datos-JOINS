@@ -149,3 +149,8 @@ LEFT OUTER JOIN TEAMS T
 ON  O.ID = T.TOWN
 WHERE T.TOWN IS NULL ;
 ~~~
+
+| name |
+| :--- |
+| Athens |
+
